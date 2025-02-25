@@ -58,3 +58,8 @@ $(document).ready(function() {
 }); 
 // jquery end
 
+setTimeout(function(){
+    $('#message').fadeOut('slow')
+}, 4000)
+// #message se refère à l'id "message" dans alerst.html
+// 4000 c'est 4000 millisecond = 4 sec

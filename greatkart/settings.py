@@ -128,10 +128,27 @@ STATICFILES_DIRS = [
     "greatkart\static",
 ]
 
-STATIC_URL = "media/"
-STATIC_ROOT = BASE_DIR / "media"
+MEDIA = "media/"
+MEDIA = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {messages.ERROR: "Danger"}
+
+
+# SMTP configuration
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587  # pour gmail, peut etre différent si autre smtp
+EMAIL_HOST_USER = "dhouibfiras85@gmail.com"
+EMAIL_HOST_PASSWORD = "kbhh irys wftm ilqp"
+EMAIL_USE_TLS = True
+
+# Google bloque l’accès à des application tierce comme django.
+# Pour donner l’accès de Django aux mails, il faut créer un mot de passe spécifique depuis mon compte google : il faut aller dans sécurité, activer la validation en 2 étapes, et après créer un « mot de passe d’application » qui sera généré automatiqueent par google.
+# Pour donner accès à django depuis mon compte dhouibfiras88@gmail.com : kbhh irys wftm ilqp

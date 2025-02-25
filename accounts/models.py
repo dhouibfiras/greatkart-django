@@ -56,12 +56,12 @@ class Account(AbstractBaseUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username", "first_name", "last_name"]
     # Préciser le manager à utiliser pour la création de user et superuser
-    Objects = MyAccountManager()
+    objects = MyAccountManager()
 
     def __str__(self):
         return self.email
 
-    # si l'utilisateur ets admin, il a toutes les permissions
+    # si l'utilisateur est admin, il a toutes les permissions
     def has_perm(self, perm, obj=None):
         return self.is_admin
 

@@ -1,0 +1,11 @@
+{% comment %} Autoescape off pour protéger, car on render du html depuis la vue (render to string) {% endcomment %}
+
+{% autoescape off %}
+
+Hi {{user.frist_name}},
+
+Please click on the below link to confirm your registration.
+http://{{domain}}{%url 'activate' uidb64=uid token=token%}
+
+If you think it is not you, please ignore this mail.
+{% endautoescape %}
